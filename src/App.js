@@ -16,8 +16,8 @@ function App(props) {
     <div className="App">
       <h1 className={props.color}>{props.title}</h1>
       <p>{props.message}</p>
-      {/* <p className={props.color, "clickable"} onClick={doClick}>counter:{counter}</p> */}
-      <p className={props.color + " clickable"} onClick={doClick}>counter: {counter}.</p>
+      {/* <p className={props.color, "clickable"} onClick={doClick}>counter:{counter}</p> 이거 오류임*/ } 
+      <p className={props.color+ " clickable"} onClick={doClick}>counter: {counter}.</p>
       <div>{msg}</div>
     </div>
   );
