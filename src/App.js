@@ -23,6 +23,7 @@ function App(props){
     {name:"Kim"},
     {name:"Lee"},
     {name:"Park"},
+    {name:"Jo"}
   ];
 
 return(
