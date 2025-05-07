@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-import {useState, useEffect} from 'react';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState, useEffect } from "react";
 
-function App(props) {
-  const data = [
-   {name:"Kim", mail:"kim@gilbut"},
-   {name:"Lee", mail:"lee@flower"},
-   {name:"Part", mail:"park@happy"}
-  ];
+function Message(props){
   return(
- 
-   <div className = "App">
-   <h1>{props.title}</h1>
-   <ul>
-     {data.map((item, key)=>{
-       return(<li>{item.name}[{item.mail}]</li>)
-     })}
-   </ul>
-   </div>
-  )
-  
+    <p className="ClassA">{props.message}</p>
+  );
+}
+
+function Data(props){
+  return(
+    <ul>
+      {props.data.map((item, key)=>{
+        return(<li key={key}>{item.name}</li>)
+      })}
+    </ul>
+  );
+}
+
+function App(props){
+  const data=[
+    {name:"Kim"},
+    {name:"Lee"},
+    {name:"Park"},
+  ];
+
+return(
+  <div className="App">
+    <h1 className="ClassB">{props.title}</h1>
+    <Message message="This is sample message!"/>
+    <Data data={data}/>
+  </div>
+);
+
 }
 
 export default App;
