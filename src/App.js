@@ -1,26 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 function App(props) {
-
-  const [counter, setCounter] = useState(0);
-
-  const doClick = () => {
-    setCounter(counter+1);
-  };
-
-  const msg ="이것은 샘플 페이지 입니다.";
-
-  return (
-    <div className="App">
-      <h1 className={props.color}>{props.title}</h1>
-      <p>{props.message}</p>
-      {/* <p className={props.color, "clickable"} onClick={doClick}>counter:{counter}</p> 이거 오류임*/ } 
-      <p className={props.color+ " clickable"} onClick={doClick}>counter: {counter}.</p>
-      <div>{msg}</div>
-    </div>
-  );
+  const data = [
+   {name:"Kim", mail:"kim@gilbut"},
+   {name:"Lee", mail:"lee@flower"},
+   {name:"Part", mail:"park@happy"}
+  ];
+  return(
+ 
+   <div className = "App">
+   <h1>{props.title}</h1>
+   <ul>
+     {data.map((item, key)=>{
+       return(<li>{item.name}[{item.mail}]</li>)
+     })}
+   </ul>
+   </div>
+  )
+  
 }
 
 export default App;
